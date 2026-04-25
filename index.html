@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Solicitações UPA</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#3478f6">
+
+  <!-- Mobile -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <!-- Ícone -->
+  <link rel="icon" href="icon-512.png">
+  <link rel="apple-touch-icon" href="icon-512.png">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="
+  margin:0;
+  background:#07111f;
+  color:white;
+  font-family:Arial, sans-serif;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+">
+
+  <div style="text-align:center">
+
+    <img src="icon-192.png" style="width:96px;border-radius:24px;margin-bottom:16px;">
+
+    <h2>Solicitações UPA</h2>
+    <p style="color:#a8b8d3;">Sistema de solicitações</p>
+
+    <button onclick="abrirForm()" style="
+      padding:14px 22px;
+      border:0;
+      border-radius:14px;
+      background:#3478f6;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+    ">
+      Abrir formulário
+    </button>
+
+  </div>
+
+  <script>
+    const LINK_FORM = "https://script.google.com/macros/s/AKfycbwXyIUGCiBAx1XDzjdKf-I4uUKyNbA7UMReVmt0zaQQhywU4XOdkA2dMhbI8ZO1N0I/exec";
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+
+    function abrirForm() {
+      window.location.href = LINK_FORM;
+    }
+  </script>
+
+</body>
+</html>
